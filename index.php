@@ -47,7 +47,7 @@ echo "
         <!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
     </head>
     <body class="homepage">
-$btcrate = file_get
+$btcrate = file_get_contents("https://bleutrade.com/api/v1/calculator?from_coin=btc&value=1&to_coin=USD");
         <!-- Header -->
             <div id="header">
                         
@@ -64,7 +64,7 @@ Please select your currency that you wish to withdraw to.<br /><br />
 <a href=order/?type=QRK class="button circled scrolly">QRK</a>
 <br/>
 <div class="button circled scrolly">
-BTC to USD rate:
+1 BTC to USD rate:
 $<?php echo $btcrate; ?>
 </div>
 
