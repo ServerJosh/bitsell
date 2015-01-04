@@ -7,6 +7,11 @@ header("location: setup");
 }
 else 
 {
+if (file_exists("setup")) {
+    die("Security error! <b>Please delete the 'setup' folder for this software to function.");
+    
+} 
+
 // continue on with system 
 echo " 
 ";
@@ -42,7 +47,7 @@ echo "
         <!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
     </head>
     <body class="homepage">
-
+$btcrate = file_get
         <!-- Header -->
             <div id="header">
                         
@@ -50,10 +55,20 @@ echo "
                     <div class="inner">
                         <header>
                         <h1 id="logo">BitSellATM</h1><br />
-Please choose your currency.<br /><br />
+Please select your currency that you wish to withdraw to.<br /><br />
 <a href=order/?type=BTC class="button circled scrolly">BTC</a> 
 <a href=order/?type=DOGE class="button circled scrolly">DGC</a>   
 <a href=order/?type=DRK class="button circled scrolly">DRK</a>
 <a href=order/?type=LTC class="button circled scrolly">LTC</a>
 <a href=order/?type=NMC class="button circled scrolly">NMC</a>
 <a href=order/?type=QRK class="button circled scrolly">QRK</a>
+<br/>
+<div class="button circled scrolly">
+BTC to USD rate:
+$<?php echo $btcrate; ?>
+</div>
+
+<!-- Close tags !-->
+</div>
+</body>
+</html>
